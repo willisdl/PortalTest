@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project MaritimeTest with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/davidwillis/Documents/workspace/MaritimeTest.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="business.testMain"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ selenium-server-standalone-2.25.0.jar javaee.jar mail.jar log4j-1.2.17.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="/Users/davidwillis/Documents/workspace/MaritimeTest/bin"/>
+            <zipfileset dir="/Users/davidwillis" includes="selenium-server-standalone-2.25.0.jar"/>
+            <zipfileset dir="/Users/davidwillis/Documents/workspace/MaritimeTest" includes="javaee.jar"/>
+            <zipfileset dir="/Users/davidwillis/Documents/workspace/MaritimeTest" includes="mail.jar"/>
+            <zipfileset dir="/Users/davidwillis/Downloads/apache-log4j-1.2.17" includes="log4j-1.2.17.jar"/>
+        </jar>
+    </target>
+</project>
